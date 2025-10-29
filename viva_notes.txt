@@ -1,0 +1,39 @@
+NebulaSim - Viva Notes
+
+Project: NebulaSim - Interactive space object simulation in C
+Team: <Name1>, <Name2>, <Name3>
+
+Short description:
+NebulaSim models particles moving randomly on a 2D grid. Particles may collide and merge, their energy determines brightness, and frames can be saved and replayed.
+
+Key concepts demonstrated:
+- Arrays and 2D grid representation
+- Structures (Particle) to store object data
+- Pointers (function parameter passing)
+- Loops and decision-making for update rules
+- File I/O for saving and replaying frames
+- Modular programming: nebula.c/.h and main.c
+
+Algorithm summary:
+- initializeParticles: random positions and energies
+- For each step:
+  - moveParticles: random delta -1,0,+1 in x,y
+  - handleCollisions: merge particles that share coordinates
+  - updateBrightness: set brightness, remove dead particles
+  - saveToFile: write ASCII snapshot to steps/stepXXXX.txt (if saving)
+- replaySimulation reads step files sequentially and displays them.
+
+Limitations & assumptions:
+- Simplified physics (random drift rather than real gravity)
+- Maximum number of particles capped (MAX_PARTICLES)
+- Cross-platform differences: terminal clearing and mkdir commands are best-effort.
+
+Possible extensions:
+- Add real forces (attraction/repulsion)
+- Implement a GUI (outside syllabus)
+- Add energy transfer rules, spawn/despawn logic
+- Visual color output using ANSI codes
+
+Demo commands:
+- make
+- ./NebulaSim
