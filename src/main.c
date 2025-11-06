@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 
+#include "auth.h"
 #include "nebula.h"
 
 /* Default parameters */
@@ -33,6 +34,15 @@ int main() {
   int grid_h = DEFAULT_GRID_H;
   int num_particles = DEFAULT_PARTICLES;
   int steps = DEFAULT_STEPS;
+
+  /* Authentication System */
+
+  if (!auth_menu()) {
+    printf("Authentication canceled. Exiting.\n");
+    return 0;
+  }
+  const char* user = auth_get_current_user();
+  if (user) printf("Logged in as: %s\n", user);
 
   /* Basic menu */
   while (1) {
