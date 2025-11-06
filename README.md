@@ -1,49 +1,131 @@
-# NebulaSim
+# 🌌 NebulaSim
 
-NebulaSim is a simple **C-based interactive space object simulation** that models particles moving, merging, and changing brightness on a 2D grid. The project uses core C concepts: arrays, structs, pointers, file I/O, loops, and conditional logic.
+**NebulaSim** is a simple, visually dynamic **space simulation project** written in C.  
+It models the motion and brightness changes of space particles on a 2D grid — like a nebula slowly evolving in space.  
+The project also includes a **basic authentication system** (login, register, forgot password) built using file handling and string operations.
 
-## Features
+---
 
-- Interactive simulation with step-by-step control
-- Batch mode to save frames to `steps/stepXXXX.txt`
-- Replay mode to view saved frames
-- Simple merge/collision rules and brightness based on energy
-- Configurable grid size, particle count, and steps
+## 🧠 Features
 
-## Build & Run
+- 🔐 **Simple Authentication System**
+  - Register new users
+  - Login existing users
+  - Reset password (Forgot Password)
+  - Data stored in plain text (`users.db`)
+- 🪐 **Nebula Simulation**
+  - Particles move randomly on a grid
+  - Collisions cause brightness increase
+  - Each step saved as text snapshot
+- 💾 **File Handling**
+  - Saves particle states for replay
+  - Stores user data persistently
+- 🧩 **Core C Concepts Used**
+  - Arrays & loops
+  - Structures & functions
+  - Pointers & dynamic memory (`malloc`)
+  - File handling (`fopen`, `fprintf`, `fgets`)
+  - Conditional logic (`if`, `switch`)
 
-1. Create folder structure:
+---
 
+## 🏗️ Folder Structure
+
+```
 NebulaSim/
 ├── src/
-│ ├── main.c
-│ ├── nebula.c
-│ └── nebula.h
-├── steps/ # create this manually
-├── Makefile
-└── README.md
+│   ├── main.c        # Main simulation control + menu
+│   ├── nebula.c      # Particle logic, display, movement
+│   ├── nebula.h
+│   ├── auth.c        # Login / Register / Forgot password
+│   ├── auth.h
+├── users.db          # User database (auto-created)
+├── Makefile          # For easy build/run
+└── README.md         # Project documentation
+```
 
-2. Create `steps/` directory:
+---
 
-- Linux/Mac: `mkdir -p steps`
-- Windows (cmd): `mkdir steps`
+## ⚙️ Build Instructions
 
-3. Build:
+### 🖥️ On macOS / Linux:
 
+```bash
 make
-
-4. Run:
-
 ./NebulaSim
+```
 
-## Files
+### 🪟 On Windows (PowerShell or CMD):
 
-- `src/main.c` — main program and menu
-- `src/nebula.c` & `src/nebula.h` — simulation engine
-- `steps/` — saved frames (auto-saved by program)
-- `Makefile` — build helper
+```bash
+gcc src\main.c src\nebula.c src\auth.c -o NebulaSim.exe
+NebulaSim.exe
+```
 
-## Notes
+If you don’t have `make` on Windows, use the above GCC command instead.
 
-- Test in a terminal (Linux/Mac Terminal, Windows PowerShell/CMD).
-- Use `batch save` to produce many frames, then use `Replay saved simulation frames` to view them.
+---
+
+## 📖 Usage
+
+1. **Run the program**
+2. Choose one of the following options:
+   - `1` → Login
+   - `2` → Register
+   - `3` → Forgot password
+   - `4` → Continue as guest
+3. After authentication, the **Nebula Simulation** starts.
+4. Watch particles move, brighten, and evolve over time.
+
+---
+
+## 💡 Example Output
+
+```
+Step 1:
+. . * . O .
+. * . . . .
+. . O * . .
+. . . . . .
+
+Step 2:
+. . . * O .
+. * O . . .
+. . . . . .
+. * . . . .
+```
+
+---
+
+## 👩‍💻 Team
+
+| Member   | Role                         |
+| -------- | ---------------------------- |
+| Member 1 | Particle & Simulation Logic  |
+| Member 2 | Display & File Handling      |
+| Member 3 | Authentication & Menu System |
+
+---
+
+## 🧰 Technologies Used
+
+- **Language:** C (C11 Standard)
+- **Compiler:** GCC / Clang
+- **Platform:** macOS, Windows, Linux
+- **Tools:** Makefile, GitHub
+
+---
+
+## 🪙 Credits
+
+Developed as part of the **CSE Project** at **KUET**.  
+Guided by: _[Your Instructor’s Name]_  
+Project by **Team Nebula** 🌌
+
+> "Where code meets the cosmos."
+
+---
+
+## 🧾 License
+
+This project is open-source for educational use only.
