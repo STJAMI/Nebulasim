@@ -119,7 +119,6 @@ Step 2:
 ## 🪙 Credits
 
 Developed as part of the **CSE Project** at **KUET**.  
-Guided by: _[Your Instructor’s Name]_  
 Project by **Team Nebula** 🌌
 
 > "Where code meets the cosmos."
