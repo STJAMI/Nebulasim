@@ -1,34 +1,39 @@
-# Prerequisites
+# ============================================================
+# 🌌 NebulaSim Project - .gitignore
+# Combines standard C/C++ ignores with project-specific files
+# ============================================================
+
+# ---------- Prerequisites ----------
 *.d
 
-# Object files
+# ---------- Object files ----------
 *.o
 *.ko
 *.obj
 *.elf
 
-# Linker output
+# ---------- Linker output ----------
 *.ilk
 *.map
 *.exp
 
-# Precompiled Headers
+# ---------- Precompiled Headers ----------
 *.gch
 *.pch
 
-# Libraries
+# ---------- Libraries ----------
 *.lib
 *.a
 *.la
 *.lo
 
-# Shared objects (inc. Windows DLLs)
+# ---------- Shared objects (inc. Windows DLLs) ----------
 *.dll
 *.so
 *.so.*
 *.dylib
 
-# Executables
+# ---------- Executables ----------
 *.exe
 *.out
 *.app
@@ -36,13 +41,13 @@
 *.x86_64
 *.hex
 
-# Debug files
+# ---------- Debug files ----------
 *.dSYM/
 *.su
 *.idb
 *.pdb
 
-# Kernel Module Compile Results
+# ---------- Kernel Module Compile Results ----------
 *.mod*
 *.cmd
 .tmp_versions/
@@ -51,5 +56,35 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# debug information files
+# ---------- Debug info ----------
 *.dwo
+
+# ============================================================
+# 🪐 NebulaSim Specific Rules
+# ============================================================
+
+# Ignore user database (contains local accounts)
+users.db
+
+# Ignore simulation output (steps, snapshots)
+steps/
+*.txt
+
+# Ignore built binary
+NebulaSim
+NebulaSim.exe
+
+# Ignore temporary files
+*.log
+*.tmp
+*.bak
+
+# Ignore IDE/editor settings
+.vscode/
+.idea/
+*.code-workspace
+
+# Ignore macOS and Windows system files
+.DS_Store
+Thumbs.db
+desktop.ini
